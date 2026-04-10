@@ -6,35 +6,62 @@
   <title>Privacy Policy | Pixel Panic Games</title>
   <link rel="icon" type="image/png" href="./favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <script>
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.add('light');
+    }
+  </script>
 </head>
 <body class="min-h-screen bg-white flex flex-col">
 
   <!-- Header -->
-  <header class="border-b-4 border-black bg-[#FFD700]">
+  <header class="border-b-4 border-black bg-[var(--ppg-yellow)]">
     <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
       <a href="/" class="text-3xl font-black uppercase hover:opacity-80 transition-opacity">
         Pixel Panic Games
       </a>
-      <a href="./about-us">
-        <button class="px-8 py-4 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px] transition-all duration-200 uppercase font-black bg-[#FFD700] hover:bg-[#FFC700]">
-          About Us
+      <div class="flex gap-3 items-center">
+        <a href="./about-us">
+          <button class="px-8 py-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 uppercase font-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)]">
+            About Us
+          </button>
+        </a>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" class="w-12 h-12 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#1a1a1b" stroke="#1a1a1b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
-      </a>
+      </div>
     </div>
   </header>
+  <script>
+    const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#1a1a1b" stroke="#1a1a1b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+    const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e1e1e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.toggle('dark');
+      html.classList.toggle('light', !isDark);
+      localStorage.theme = isDark ? 'dark' : 'light';
+      document.getElementById('theme-toggle').innerHTML = isDark ? sunIcon : moonIcon;
+    }
+    if (localStorage.theme === 'dark') {
+      document.getElementById('theme-toggle').innerHTML = sunIcon;
+    }
+  </script>
 
   <!-- Main Content -->
   <main class="flex-1 max-w-4xl mx-auto px-6 py-12 w-full">
 
     <!-- Title Card -->
-    <div class="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 mb-8" style="background-color: #FFD700;">
+    <div class="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 mb-8 bg-[var(--ppg-yellow)]">
       <h1 class="text-5xl font-black uppercase leading-tight">Privacy Policy</h1>
       <p class="font-bold mt-2">Last updated: 29 March 2026</p>
     </div>
 
     <div class="space-y-6">
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">1. Introduction</h2>
         <p class="font-bold">
           Welcome to Pixel Panic Games ("we", "our", or "us"). We are committed to protecting your privacy.
@@ -50,7 +77,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">2. Information We Collect</h2>
         <p class="font-bold">
           <span class="font-black">Our current app does not collect any personal or sensitive
@@ -71,7 +98,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">3. How We Use Your Information</h2>
         <p class="font-bold">
           As our current app collects no user data, we do not process, use, or analyse any personal
@@ -84,7 +111,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">4. Sharing of Information</h2>
         <p class="font-bold">
           Since our current app collects no user data, we have no personal information to share or sell.
@@ -97,7 +124,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">5. Third-Party SDKs &amp; Services</h2>
         <p class="font-bold">
           Our current app does <span class="font-black">not</span> integrate any third-party
@@ -110,7 +137,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">6. Advertising</h2>
         <p class="font-bold">
           Our current app contains <span class="font-black">no advertisements</span> and does
@@ -122,7 +149,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">7. Children's Privacy</h2>
         <p class="font-bold">
           Protecting the privacy of children is especially important to us. Our Services are not directed
@@ -143,7 +170,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">8. Data Retention</h2>
         <p class="font-bold">
           As our current app collects no user data, we hold no personal information and therefore have
@@ -155,7 +182,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">9. Security</h2>
         <p class="font-bold">
           We implement reasonable technical and organisational safeguards to protect your information
@@ -165,7 +192,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">10. Your Rights &amp; Data Deletion</h2>
         <p class="font-bold">
           Since our current app collects no personal data, there is no data held about you to access,
@@ -178,7 +205,7 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#FFFFFF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-white">
         <h2 class="text-2xl font-black uppercase mb-4">11. Changes to This Policy</h2>
         <p class="font-bold">
           We may update this Privacy Policy from time to time to reflect changes in our practices,
@@ -191,12 +218,12 @@
         </p>
       </div>
 
-      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6" style="background-color:#00D9FF;">
+      <div class="border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 bg-[var(--ppg-cyan)]">
         <p class="font-bold">
           If you have any questions, concerns, or requests regarding this Privacy Policy or your personal
           data, please contact us at:
         </p>
-        <div class="mt-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-6 py-5" style="background-color:#FFD700;">
+        <div class="mt-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] px-6 py-5 bg-[var(--ppg-yellow)]">
           <p class="font-black text-lg uppercase">Pixel Panic Games</p>
           <p class="mt-1 font-bold">Email: <a href="mailto:contact@pixelpanicgames.com" class="underline hover:opacity-70 transition-opacity">contact@pixelpanicgames.com</a></p>
         </div>
@@ -206,14 +233,14 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t-4 border-black bg-[#00D9FF]">
+  <footer class="border-t-4 border-black bg-[var(--ppg-cyan)]">
     <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 
       <!-- Social Icons Row -->
       <div class="flex gap-4 flex-wrap">
 
         <!-- YouTube -->
-        <a href="https://www.youtube.com/@PixelPanicGames2026" target="_blank" aria-label="YouTube" class="w-12 h-12 border-4 border-black bg-[#FFD700] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
+        <a href="https://www.youtube.com/@PixelPanicGames2026" target="_blank" aria-label="YouTube" class="w-12 h-12 border-4 border-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
             <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
@@ -221,7 +248,7 @@
         </a>
 
         <!-- Itch.io -->
-        <a href="https://pixelpanicgames.itch.io/" target="_blank" aria-label="Itch.io" class="w-12 h-12 border-4 border-black bg-[#FFD700] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
+        <a href="https://pixelpanicgames.itch.io/" target="_blank" aria-label="Itch.io" class="w-12 h-12 border-4 border-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="6" y1="12" x2="10" y2="12"></line>
             <line x1="8" y1="10" x2="8" y2="14"></line>

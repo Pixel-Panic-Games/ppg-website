@@ -1,0 +1,127 @@
+/* ── Brand colour tokens ───────────────────────────────────────────── */
+:root {
+  --ppg-yellow:       #FFD700;
+  --ppg-yellow-hover: #FFC700;
+  --ppg-cyan:         #00D9FF;
+  --ppg-green:        #9BFF00;
+  --ppg-white:        #FFFFFF;
+  --ppg-dark-bg:      #1a1a1b;
+  --ppg-dark-text:    #e1e1e1;
+}
+
+/* ── Dark mode ─────────────────────────────────────────────────────── */
+.dark {
+  body {
+    background-color: var(--ppg-dark-bg) !important;
+    color: var(--ppg-dark-text) !important;
+  }
+
+  /* Form elements (about-us contact form) */
+  input, textarea, select {
+    color: var(--ppg-dark-text) !important;
+    background-color: var(--ppg-dark-bg) !important;
+  }
+  input::placeholder, textarea::placeholder {
+    color: rgba(225, 225, 225, 0.5) !important;
+  }
+
+  /* All coloured backgrounds → dark */
+  [class~="bg-white"],
+  [class*="bg-[var(--ppg-white)]"],
+  [class*="bg-[var(--ppg-yellow)]"],
+  [class*="bg-[var(--ppg-cyan)]"],
+  [class*="bg-[var(--ppg-green)]"] {
+    background-color: var(--ppg-dark-bg) !important;
+  }
+
+  /* Borders */
+  [class*="border-black"] {
+    border-color: var(--ppg-dark-text) !important;
+  }
+
+  /* Hard shadows → white */
+  [class~="shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"] {
+    box-shadow: 8px 8px 0px 0px rgba(225, 225, 225, 1) !important;
+  }
+  [class~="shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"] {
+    box-shadow: 6px 6px 0px 0px rgba(225, 225, 225, 1) !important;
+  }
+  [class~="shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"] {
+    box-shadow: 4px 4px 0px 0px rgba(225, 225, 225, 1) !important;
+  }
+
+  /* Hover/focus press-down effect */
+  [class*="focus:shadow-[4px_4px"]:focus {
+    box-shadow: 4px 4px 0px 0px rgba(225, 225, 225, 1) !important;
+  }
+  [class*="hover:shadow-[4px_4px"]:hover {
+    box-shadow: 4px 4px 0px 0px rgba(225, 225, 225, 1) !important;
+  }
+  [class*="hover:shadow-[2px_2px"]:hover {
+    box-shadow: 2px 2px 0px 0px rgba(225, 225, 225, 1) !important;
+  }
+}
+
+/* ── Light mode ────────────────────────────────────────────────────── */
+.light {
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  /* Form elements */
+  input, textarea, select {
+    color: #000000;
+    background-color: #ffffff;
+  }
+  input::placeholder, textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Coloured backgrounds */
+  [class~="bg-white"],
+  [class*="bg-[var(--ppg-white)]"] {
+    background-color: var(--ppg-white) !important;
+  }
+  [class*="bg-[var(--ppg-yellow)]"] {
+    background-color: var(--ppg-yellow) !important;
+  }
+  [class*="bg-[var(--ppg-cyan)]"] {
+    background-color: var(--ppg-cyan) !important;
+  }
+  [class*="bg-[var(--ppg-green)]"] {
+    background-color: var(--ppg-green) !important;
+  }
+
+  /* Hover backgrounds */
+  [class*="hover:bg-[var(--ppg-yellow-hover)]"]:hover {
+    background-color: var(--ppg-yellow-hover) !important;
+  }
+
+  /* Borders */
+  [class*="border-black"] {
+    border-color: #000000 !important;
+  }
+
+  /* Hard shadows → black */
+  [class~="shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"] {
+    box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 1) !important;
+  }
+  [class~="shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"] {
+    box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1) !important;
+  }
+  [class~="shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"] {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1) !important;
+  }
+
+  /* Hover/focus press-down effect */
+  [class*="focus:shadow-[4px_4px"]:focus {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1) !important;
+  }
+  [class*="hover:shadow-[4px_4px"]:hover {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1) !important;
+  }
+  [class*="hover:shadow-[2px_2px"]:hover {
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1) !important;
+  }
+}

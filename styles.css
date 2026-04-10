@@ -34,6 +34,11 @@
     background-color: var(--ppg-dark-bg) !important;
   }
 
+  /* Logo swap */
+  #site-logo {
+    content: url('./images/Logo-dark-bg.png');
+  }
+
   /* Borders */
   [class*="border-black"] {
     border-color: var(--ppg-dark-text) !important;

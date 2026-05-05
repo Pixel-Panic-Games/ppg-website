@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pixel Panic Games</title>
   <link rel="icon" type="image/png" href="./favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./styles.css">
   <script>
@@ -19,26 +22,26 @@
 <body class="min-h-screen bg-white flex flex-col">
 
   <!-- Header -->
-  <header class="border-b-4 border-black bg-[var(--ppg-yellow)]">
+  <header class="border-b-4 border-black bg-white">
     <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-      <a href="/" class="text-3xl font-black uppercase hover:opacity-80 transition-opacity">
+      <a href="/" class="text-3xl font-black uppercase hover:opacity-80 transition-opacity" style="font-family: 'Courier Prime', monospace;">
         Pixel Panic Games
       </a>
       <div class="flex gap-3 items-center">
         <a href="./about-us">
-          <button class="px-8 py-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 uppercase font-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)]">
+          <button class="px-8 py-4 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 uppercase font-black bg-[var(--ppg-purple)] hover:bg-[#D0EA35] text-white" style="font-family: 'Courier Prime', monospace;">
             About Us
           </button>
         </a>
-        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" class="w-12 h-12 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#1a1a1b" stroke="#1a1a1b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" class="w-12 h-12 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 bg-[var(--ppg-purple)] hover:bg-[#D0EA35] flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
       </div>
     </div>
   </header>
   <script>
-    const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#1a1a1b" stroke="#1a1a1b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-    const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e1e1e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+    const moonIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#ffffff" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+    const sunIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
     function toggleTheme() {
       const html = document.documentElement;
       const isDark = html.classList.toggle('dark');
@@ -53,19 +56,19 @@
   </script>
 
   <!-- Main Content -->
-  <main class="flex-1 max-w-7xl mx-auto px-6 py-12 w-full flex items-center">
-    <div class="w-full">
+  <main class="flex-1 w-full flex items-center">
+    <div class="w-full max-w-7xl mx-auto px-6 py-12">
 
-		<!-- Releasing Soon Banner-->
-	<div class="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 bg-[var(--ppg-yellow)]">
-        <div class="grid gap-8 items-center">
-        	<h1 class="text-3xl font-black uppercase leading-tight">
-              CHECK OUT THE TRAILER FOR OUR FIRST GAME !
+		<!-- Banner-->
+	<div class="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-4 bg-[var(--ppg-red)] mb-8">
+        <div class="flex items-center justify-center">
+        	<h1 class="text-xl font-bold text-white" style="font-family: 'Courier Prime', monospace;">
+              Check out the trailer for our first game!
         	</h1>
         </div>
       </div>
 
-      <div class="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 bg-[var(--ppg-yellow)]">
+      <div class="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 bg-white">
         <div class="grid lg:grid-cols-2 gap-8 items-center">
 
           <!-- YouTube Embed: order-2 on mobile, order-1 on lg -->
@@ -77,13 +80,19 @@
 
           <!-- Game Info: order-1 on mobile, order-2 on lg -->
           <div class="order-1 lg:order-2">
-            <h1 class="text-5xl font-black uppercase mb-6 leading-tight">
-              Jet Pack Kiwi
-            </h1>
-            <div class="space-y-4 font-bold text-lg">
-				<span>Available now on&nbsp;</span>
+            <div class="inline-block px-3 py-1 mb-6 bg-[var(--ppg-lime)]">
+              <h1 class="text-2xl font-bold uppercase" style="font-family: 'Courier Prime', monospace;">
+                Jet Pack Kiwi
+              </h1>
+            </div>
+            <div class="space-y-4 text-lg" style="font-family: 'Courier Prime', monospace;">
+				<span>Available now on</span>
 				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.pixelpanicgames.jetpackkiwi" class="text-xl font-bold">
 					<span class="underline">Google Play</span>
+				</a>
+				,
+				<a target="_blank" href="https://pixelpanicgames.itch.io/jet-pack-kiwi" class="text-xl font-bold">
+					<span class="underline">Itch.Io</span>
 				</a>
 				<span> and </span>
 				<a target="_blank" href="https://gamejolt.com/games/jet-pack-kiwi/1062218" class="text-xl font-bold">
@@ -111,74 +120,34 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t-4 border-black bg-[var(--ppg-cyan)]">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+  <footer class="border-t-4 border-black bg-[var(--ppg-black)]">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
 
-      <!-- Social Icons -->
-      <div class="flex gap-4 flex-wrap">
-
-        <!-- Instagram -->
-        <!--a href="#" aria-label="Instagram" class="w-12 h-12 border-4 border-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </a-->
-
-        <!-- YouTube -->
-        <a href="https://www.youtube.com/@PixelPanicGames2026" target="_blank" aria-label="YouTube" class="w-12 h-12 border-4 border-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
-            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
-          </svg>
-        </a>
-
-        <!-- Itch.io -->
-        <a href="https://pixelpanicgames.itch.io/" target="_blank" aria-label="Itch.io" class="w-12 h-12 border-4 border-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="6" y1="12" x2="10" y2="12"></line>
-            <line x1="8" y1="10" x2="8" y2="14"></line>
-            <line x1="15" y1="13" x2="15.01" y2="13"></line>
-            <line x1="18" y1="11" x2="18.01" y2="11"></line>
-            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
-          </svg>
-        </a>
-
-        <!-- Play Store -->
-        <!--a href="#" aria-label="Play Store" class="w-12 h-12 border-4 border-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-          </svg>
-        </a-->
-
-        <!-- App Store (Apple) -->
-        <!--a href="#" aria-label="App Store" class="w-12 h-12 border-4 border-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06z"></path>
-            <path d="M10 2c1 .5 2 2 2 5"></path>
-          </svg>
-        </a-->
-
+      <!-- Logo -->
+      <div>
+        <img
+          id="site-logo"
+          src="./images/Website_Logo.png"
+          alt="PPG Logo"
+          class="object-contain"
+          style="max-height:120px;"
+        />
       </div>
 
-      <!-- Privacy Policy + Logo row (stacks below icons on mobile, inline on lg) -->
-      <div class="flex items-center justify-between lg:contents">
-
-        <!-- Privacy Policy Link -->
-        <a href="./privacy-policy" class="font-black uppercase text-sm border-4 border-black bg-[var(--ppg-yellow)] hover:bg-[var(--ppg-yellow-hover)] px-4 py-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200">
-          Privacy Policy
-        </a>
-
-        <!-- Logo -->
-        <div>
-          <img
-            id="site-logo"
-            src="./images/Logo-light-bg.png"
-            alt="PPG Logo"
-            class="object-contain"
-            style="max-height:150px;"
-          />
+      <!-- Links + Privacy Policy -->
+      <div class="flex flex-col lg:items-end">
+        
+        <div class="flex flex-wrap gap-x-6 gap-y-2" style="font-family: 'Courier Prime', monospace;">
+			<!-- Privacy Policy Link -->
+			<a href="./privacy-policy" class="text-white text-lg hover:underline" style="font-family: 'Courier Prime', monospace;">
+			Privacy Policy
+			</a>
+			<span class="text-white text-lg" style="border-left: 3px solid; display: inline-block;height: 1em; margin: 4px 6px;"></span>
+			<!-- Platform text links -->
+			<a href="https://pixelpanicgames.itch.io/" target="_blank" class="text-white text-lg hover:underline">Itch</a>
+			<a href="https://gamejolt.com/@pixelpanicgames" target="_blank" class="text-white text-lg hover:underline">Game Jolt</a>
+			<a href="https://play.google.com/store/apps/developer?id=Pixel+Panic+Games" target="_blank" class="text-white text-lg hover:underline">Android</a>
+			<a href="https://www.youtube.com/@PixelPanicGames2026" target="_blank" class="text-white text-lg hover:underline">YouTube</a>
         </div>
 
       </div>
